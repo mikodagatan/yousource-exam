@@ -1,0 +1,142 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Layout/LineLength:
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+
+Lint/DuplicateBranch:
+  Exclude:
+Lint/MissingSuper:
+  Exclude:
+    - app/components/**/*
+
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+
+Metrics/BlockLength:
+  Max: 30
+  AllowedMethods:
+    [
+      "describe",
+      "context",
+      "before",
+      "let",
+      "permissions",
+      "it_behaves_like",
+      "shared_examples",
+    ]
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
+    - db/migrate/*.rb
+    - db/seeds/*.rb
+    - lib/tasks/*.rake
+
+Metrics/PerceivedComplexity:
+  Exclude:
+
+Metrics/ClassLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 25
+  Exclude:
+
+Rails/FilePath:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+Rails/BulkChangeTable:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+RSpec/DescribeSymbol:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/MultipleSubjects:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/IndexedLet:
+  Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/FetchEnvVar:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/SymbolProc:
+  Enabled: true
+  Exclude:
+    - app/serializers/*.rb
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+Rails/RakeEnvironment:
+  Exclude:
+Rails/ReversibleMigration:
+  Exclude:
+Rails/InverseOf:
+  Exclude:
+
+RSpec/BeEq:
+  Enabled: false

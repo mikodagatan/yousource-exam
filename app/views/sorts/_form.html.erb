@@ -1,0 +1,23 @@
+<%= form_with url: sorts_path, method: :post do |f| %>
+  <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2">
+      <%= f.label :strategy %>
+      <%= f.select :strategy, Sort::Service::STRATEGIES_OPTIONS, selected: "bubble_sort" %>
+      <%= form_error(@errors, :strategy) %>
+    </div>
+    <div class="flex flex-col gap-2">
+      <%= f.label :data %>
+      <%= f.text_area :data, size: "70x5" %>
+      <%= form_error(@errors, :data) %>
+    </div>
+     <div class="flex flex-col gap-2">
+      <%= f.label :output %>
+      <div>
+        <%= @result %>
+      </div>
+    </div>
+    <div class="flex">
+      <%= f.submit 'Sort', class: 'bg-blue-600 rounded-md px-3 py-1 text-white font-bold cursor-pointer' %>
+    </div>
+  </div>
+<% end %>
