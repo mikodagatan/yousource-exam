@@ -9,7 +9,7 @@ module Sort
         middle = array.select { |x| x == pivot }
         right = array.select { |x| x > pivot }
 
-        sort(left) + middle + sort(right)
+        self.class.call(left) + middle + self.class.call(right)
       end
     end
   end

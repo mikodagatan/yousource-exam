@@ -21,7 +21,8 @@ module Sort
     def call
       return false unless valid?
 
-      @result = format_result(strategy_class.call(formatted_data))
+      result = strategy_class.call(formatted_data)
+      @result = format_result(result)
       true
     end
 

@@ -5,8 +5,8 @@ module Sort
         return array if array.length <= 1
 
         mid = array.length / 2
-        left_half = self.call(array[0...mid])
-        right_half = self.call(array[mid...array.length])
+        left_half = self.class.call(array[0...mid])
+        right_half = self.class.call(array[mid...array.length])
 
         merge(left_half, right_half)
       end

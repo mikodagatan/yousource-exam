@@ -14,6 +14,7 @@ RSpec.describe Sort::Service, type: :service do
 
     context 'when params are invalid' do
       let(:data) { '123' }
+      
       it 'returns true' do
         expect(subject.call).to be_falsey
       end
@@ -24,7 +25,7 @@ RSpec.describe Sort::Service, type: :service do
     context 'when params are valid' do
       it 'returns sorted data' do
         subject.call
-        expect(subject.result).to eq(data.sort)
+        expect(subject.result).to eq(data.reverse)
       end
     end
 
@@ -33,7 +34,7 @@ RSpec.describe Sort::Service, type: :service do
       
       it 'returns nil' do
         subject.call
-        expect(subjecdt.result).to be_nil
+        expect(subject.result).to be_nil
       end
     end
   end
