@@ -26,7 +26,6 @@ RSpec.shared_examples "sorts in ascending order" do
       end
     end
 
-    # Empty array
     context 'when array is empty' do
       let(:array) { [] }
       it 'returns empty array' do
@@ -34,7 +33,6 @@ RSpec.shared_examples "sorts in ascending order" do
       end
     end
 
-    # Array with duplicates
     context 'when array has duplicate values' do
       let(:array) { [3, 1, 2, 2, 1] }
       it 'returns sorted array with duplicates preserved' do
@@ -42,7 +40,6 @@ RSpec.shared_examples "sorts in ascending order" do
       end
     end
 
-    # Special characters
     context 'when array contains special characters' do
       let(:array) { ['!', '@', '#', '$'] }
       it 'returns sorted array' do
@@ -50,7 +47,6 @@ RSpec.shared_examples "sorts in ascending order" do
       end
     end
 
-    # Array with negative numbers
     context 'when array contains negative numbers' do
       let(:array) { [-1, -3, -2] }
       it 'returns sorted array' do
@@ -58,7 +54,6 @@ RSpec.shared_examples "sorts in ascending order" do
       end
     end
 
-    # Mixed data types (if applicable in your service)
     context 'when array contains numbers and strings' do
       let(:array) { [1, 'a', 2, 'b'] }
       it 'raises an error' do
